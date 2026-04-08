@@ -1,0 +1,20 @@
+{
+    "project_name": "Robust Federated Learning for Atrial Fibrillation Risk Prediction",
+    "data_context": {
+        "total_patients": 1000,
+        "af_prevalence_percent": 15.3,
+        "time_window": "First 24 hours of ICU admission"
+    },
+    "metrics": {
+        "centralized_xgboost": {
+            "AUROC": 0.6816,
+            "F1": 0.3571
+        },
+        "federated_robust_mlp": {
+            "AUROC": 0.6978,
+            "F1": 0.2692
+        }
+    },
+    "medical_context": "Prediction of AFib risk using 24-hour vital signs and lab values from ICU admissions.",
+    "architecture_explanation": "Federated Learning simulation with 10 clients. 20.0% of clients execute a label-flipping poisoning attack. A Trimmed Mean aggregation algorithm defends against the poisoned updates."
+}
